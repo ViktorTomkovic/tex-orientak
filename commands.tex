@@ -1,0 +1,113 @@
+% Set of commands used by cv.tex
+
+\usepackage[dvipsnames,usenames]{color}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fontspec,xunicode}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{polyglossia}
+\usepackage{ragged2e}
+
+\geometry{
+    paper=a4paper,
+    bindingoffset=0cm,
+    top=1.5cm,
+    bottom=2cm,
+    left=1.0cm,
+    right=2.0cm
+}
+
+\setdefaultlanguage{slovak}
+\setotherlanguage{english}
+
+% starting commands
+
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase,Ligatures={Common}}
+%\setmainfont{Junicode}
+\setmainfont{DejaVu Sans}
+\newcommand{\largeskip}[0]{\vspace{2.5mm}\\}
+\newcommand{\shortskip}[0]{\vspace{0.4mm}\\}
+\setlength{\extrarowheight}{0.5mm}
+% small caps
+% \newcommand{\smcp}[1]{{\font\1="Junicode:+smcp" at 11pt \1{#1}}}
+%\renewcommand{\textsc}[1]{\smcp{#1}}
+\newcommand{\smcp}[1]{\textsc{\small\textbf{#1}}}
+
+% \newcommand{\hsmcp}[1]{{\font\1="Junicode:+smcp" at 14pt \1{#1}}}
+% \renewcommand{\textsc}[1]{\hsmcp{#1}}
+\newcommand{\hsmcp}[1]{\textsc{\large#1}}
+
+%\newcommand{\header}[3]{
+%\hspace{0cm}
+%\raggedright{\headline{#1}}
+%\begin{tabular}{p{10cm}p{10cm}}
+%{#2} & {\raggedleft{#3}} \\
+%\end{tabular}
+%\bigskip}
+\newcommand{\header}[2]{
+{\headline{#1}}\\
+\shortskip
+\raggedright{\large #2}
+\largeskip
+}
+
+\newcommand{\blocktitle}[1]{
+\parbox{\textwidth}{
+	\vspace{2mm}
+	\noindent
+	\textcolor{MidnightBlue}{
+{%\font\1="Junicode" at 16pt \1{#1}
+	{\Large #1}
+	\vspace*{1mm}
+	\hrule}
+	\vspace*{3mm}
+	\noindent
+} } }
+
+%\newcommand{\headline}[1]{ {\font\1="Junicode" at 18pt \1{#1}}}
+%\newcommand{\setmainfont}[0]{\font\x="Junicode" at 12pt \x}
+\newcommand{\headline}[1]{\huge #1}
+%%%%%%
+
+\newenvironment{sirsiaTabulka}
+{\begin{tabular}[t]{p{3.2cm}p{15cm}}}
+{\end{tabular}}
+
+\newenvironment{uzsiaTabulka}
+{\begin{tabular}[t]{p{3.2cm}p{10cm}}}
+{\end{tabular}}
+
+\newenvironment{tabularblock}
+{\begin{tabular}[t]{p{2.9cm}p{15cm}}}
+{\end{tabular}}
+
+%\newcommand{\zvyraznenyDvojriadok}[2]{\noindent\raggedright{\small\bfseries{\uppercase{#1}}} & #2 \tabularnewline}
+\newcommand{\zvyraznenyDvojriadok}[2]{\noindent\raggedright{\small\bfseries{#1}} & #2 \tabularnewline}
+\newcommand{\dvojriadok}[2]{\noindent\raggedright{#1} & {#2} \tabularnewline}
+%\newcommand{\sekcia}[2]{\noindent\raggedright{\textsc{#1}} & #2 \tabularnewline}
+%\newcommand{\sectionitem2}[4]{{\noindent\raggedright{\textsc{#1}}} & \raggedright{{\bf#2} {\texttt{\small #3}} \\ {#4}} \tabularnewline}
+	%\newcommand{\sekcia2}[4]{{\noindent\raggedright{\textsc{#1}}} & \raggedright{{\textbf{#2} {#3}} \\ {#4}} \tabularnewline}
+
+%%%%%%
+
+\newcommand{\interest}[2]{
+\includegraphics[height=17pt]{#1}
+~\raisebox{4pt}{#2}}
+
+%%%%%%
+
+\newenvironment{interestsblock}[1]
+{\blocktitle{#1}\begin{tabular}{p{10cm}p{10cm}}}
+{\end{tabular}}
+
+\setlength{\parindent}{0mm}
+\pagestyle{empty}
+
+% For \email{ADDRESS}, links ADDRESS to the url mailto:ADDRESS
+\newcommand*\email[1]{\href{mailto:#1}{#1}}
+% Same as above, but pretty-prints ADDRESS in teletype fixed-width font
+\renewcommand*\email[1]{\href{mailto:#1}{\texttt{#1}}}
+\newcommand{\blankline}{\quad\pagebreak[3]}
+\newcommand{\halfblankline}{\quad\vspace{-0.5\baselineskip}\pagebreak[3]}
