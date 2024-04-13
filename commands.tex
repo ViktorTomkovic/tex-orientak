@@ -5,7 +5,8 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{fontspec,xunicode}
-\usepackage{hyperref}
+%\usepackage[colorlinks=true,linkcolor=cyan,urlcolor=yellow]{hyperref}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{polyglossia}
@@ -16,8 +17,8 @@
     bindingoffset=0cm,
     top=1.5cm,
     bottom=2cm,
-    left=1.0cm,
-    right=2.0cm
+    left=1.2cm,
+    right=2.5cm
 }
 
 \setdefaultlanguage{slovak}
@@ -73,11 +74,15 @@
 %%%%%%
 
 \newenvironment{sirsiaTabulka}
-{\begin{tabular}[t]{p{3.2cm}p{15cm}}}
+{\begin{tabular}[t]{p{3.2cm}p{14cm}}}
 {\end{tabular}}
 
 \newenvironment{uzsiaTabulka}
 {\begin{tabular}[t]{p{3.2cm}p{10cm}}}
+{\end{tabular}}
+
+\newenvironment{obratenaTabulka}
+{\begin{tabular}[t]{p{9cm}p{3cm}}}
 {\end{tabular}}
 
 \newenvironment{tabularblock}
