@@ -74,15 +74,15 @@
 %%%%%%
 
 \newenvironment{sirsiaTabulka}
-{\begin{tabular}[t]{p{3.2cm}p{14cm}}}
+{\begin{tabular}[t]{p{3.0cm}p{14cm}}}
 {\end{tabular}}
 
 \newenvironment{uzsiaTabulka}
-{\begin{tabular}[t]{p{3.2cm}p{10cm}}}
+{\begin{tabular}[t]{@{}p{3.2cm}p{10cm}}}
 {\end{tabular}}
 
 \newenvironment{obratenaTabulka}
-{\begin{tabular}[t]{p{9cm}p{3cm}}}
+{\begin{tabular}[t]{@{}p{9cm}p{3cm}}}
 {\end{tabular}}
 
 \newenvironment{tabularblock}
@@ -90,7 +90,7 @@
 {\end{tabular}}
 
 %\newcommand{\zvyraznenyDvojriadok}[2]{\noindent\raggedright{\small\bfseries{\uppercase{#1}}} & #2 \tabularnewline}
-\newcommand{\zvyraznenyDvojriadok}[2]{\noindent\raggedright{\small\bfseries{#1}} & #2 \tabularnewline}
+		\newcommand{\zvyraznenyDvojriadok}[2]{\noindent\raggedright{\bfseries{#1}} & #2 \medskip \tabularnewline}
 \newcommand{\dvojriadok}[2]{\noindent\raggedright{#1} & {#2} \tabularnewline}
 %\newcommand{\sekcia}[2]{\noindent\raggedright{\textsc{#1}} & #2 \tabularnewline}
 %\newcommand{\sectionitem2}[4]{{\noindent\raggedright{\textsc{#1}}} & \raggedright{{\bf#2} {\texttt{\small #3}} \\ {#4}} \tabularnewline}
@@ -114,6 +114,6 @@
 % For \email{ADDRESS}, links ADDRESS to the url mailto:ADDRESS
 \newcommand*\email[1]{\href{mailto:#1}{#1}}
 % Same as above, but pretty-prints ADDRESS in teletype fixed-width font
-\renewcommand*\email[1]{\href{mailto:#1}{\texttt{#1}}}
+	%\renewcommand*\email[1]{\href{mailto:#1}{\texttt{#1}}}
 \newcommand{\blankline}{\quad\pagebreak[3]}
 \newcommand{\halfblankline}{\quad\vspace{-0.5\baselineskip}\pagebreak[3]}
